@@ -8,9 +8,42 @@ body {
     /* color: #5e5e5e; */
 }
 
+body {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    /* color: black; */
+    font-size: large;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
 
 img {
-    max-width: 600px;
+    max-width: 450px;
+}
+
+.header {
+    background-color: #b9b4b4;
+    height: 60px;
+}
+
+.mainmenu {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form__input {
@@ -33,4 +66,10 @@ img {
 .form__button {
     min-width: 200px;
     font-size: 16px;
+}
+
+.img__article_left {
+    max-width: 600px;
+    height: auto;
+    float: left;
 }

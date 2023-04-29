@@ -11,19 +11,21 @@ class AddPostForm(forms.ModelForm):
         fields = ['author', 'title', 'content', 'photo', 'category', 'theme']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form__input'}),
-            'content': forms.Textarea(attrs={'cols': 100, 'rows': 30}),
+            'content': forms.Textarea(attrs={'cols': 100, 'rows': 20}),
         }
 
 
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form__input'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form__input'}))
+    first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form__input'}))
+    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form__input'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form__input'}))
     password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'form__input'}))
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
 
 
 class LoginUserForm(AuthenticationForm):

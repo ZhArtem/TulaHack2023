@@ -28,7 +28,7 @@ class Post(models.Model):
         self.save()
 
     def preview(self):
-        return self.content[:124] + '...'
+        return self.content[:32] + '...'
 
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={'pk' : self.pk})
