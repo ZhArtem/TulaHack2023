@@ -1,0 +1,36 @@
+html,
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* color: #5e5e5e; */
+}
+
+
+img {
+    max-width: 600px;
+}
+
+.form__input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form__label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form__error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form__button {
+    min-width: 200px;
+    font-size: 16px;
+}

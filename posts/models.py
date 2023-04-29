@@ -73,6 +73,7 @@ class Comment(models.Model):
     commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField(verbose_name="Текст комментария")
     date_creation = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания комментария")
+    is_moderated = models.BooleanField(default=False, verbose_name="Прошло модерацию")
 
     def __str__(self):
         return self.commentUser.username

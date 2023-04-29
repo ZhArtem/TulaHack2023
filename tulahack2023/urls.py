@@ -22,7 +22,7 @@ from tulahack2023 import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/', include('posts.urls')),
+    path('', include('posts.urls')),
 ]
 
 
