@@ -1,13 +1,16 @@
 {% extends 'posts/base.html' %}
 
 {% block content %}
-<h1>{{title}}</h1>
-<form method="post">
-    {% csrf_token %}
-    {% for f in form %}
-        <p><label class="form__label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
-        <div class="form__error">{{ f.errors }}</div>
-    {% endfor %}
-    <button type="submit">Регистрация</button>
-</form>
+<section class="registration">
+    <h1>Присоединяйтесь к проекту и участвуйте в выставке</h1>
+    <h2>{{title}}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for f in form %}
+            <p><label class="form__label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+            <div class="form__error">{{ f.errors }}</div>
+        {% endfor %}
+        <button type="submit">Регистрация</button>
+    </form>
+</section>
 {% endblock %}

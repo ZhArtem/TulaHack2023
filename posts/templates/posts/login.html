@@ -2,14 +2,16 @@
 
 
 {% block content %}
-<h1>{{title}}</h1>
-<form method="post">
-    {% csrf_token %}
-    <div class="form__error">{{ form.non_field_errors }}</div>
-    {% for f in form %}
-        <p><label class="form__label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
-        <div class="form__error">{{ f.errors }}</div>
-    {% endfor %}
-    <button type="submit">Войти</button>
-</form>
+<section class="login">
+    <h1>{{title}}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form__error">{{ form.non_field_errors }}</div>
+        {% for f in form %}
+            <p><label class="form__label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+            <div class="form__error">{{ f.errors }}</div>
+        {% endfor %}
+        <button type="submit">Войти</button>
+    </form>
+</section>
 {% endblock %}

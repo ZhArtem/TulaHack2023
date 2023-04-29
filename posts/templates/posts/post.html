@@ -1,11 +1,24 @@
 {% extends 'posts/base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>{{post.title}}</h1>
-
-{% if post.photo %}
-<p><img class="img__article_left" src="{{post.photo.url}}"></p>
-{% endif %}
-
-{{post.content|linebreaks}}
+<div class="article_detail">
+    <h1 class="article__title">{{post.title}}</h1>
+    {% if post.photo %}
+        <img class="article__image" src="{{post.photo.url}}">
+    {% endif %}
+    <p class="article__text">
+        {{post.content|linebreaks}}
+    </p>
+    <div class="article__bottom">
+        <div class="article__comment">
+            {% if request.user.is_authenticated %}
+                <button>Комментировать</button>
+            {% endif %}
+        </div>
+        <div class="article__like">
+            <img src="{% static 'posts/images/heart.svg' %}" alt="">
+        </div>
+    </div>
+</div>
 {% endblock %}

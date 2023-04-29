@@ -8,10 +8,13 @@ from .models import *
 class AddPostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['author', 'title', 'content', 'photo', 'category', 'theme']
+        fields = ['title', 'content', 'photo', 'category', 'theme']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form__input'}),
-            'content': forms.Textarea(attrs={'cols': 100, 'rows': 20}),
+            'content': forms.Textarea(attrs={'cols': 40, 'rows': 20, 'class': 'form__input'}),
+            'photo': forms.ClearableFileInput(attrs={'class': 'form__input'}),
+            'category': forms.Select(attrs={'class': 'form__input'}),
+            'theme': forms.Select(attrs={'class': 'form__input'}),
         }
 
 

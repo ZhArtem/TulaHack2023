@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{% static 'posts/css/styles.css' %}">
-
+    <link rel="stylesheet" href="{% static 'posts/css/fonts.css' %}">
 </head>
 <body>
     {% block mainmenu %}
     <header class="header">
         <ul id="mainmenu" class="mainmenu">
-            <li class="logo"><a href="{% url 'home' %}"><div class="logo">Главная</div></a></li>
+            <li class="logo"><a href="{% url 'home' %}"><img class="logo" src="{% static 'posts/images/logo.png' %}" alt="logo"></a></li>
+            <!-- <li><a href="{% url 'home' %}">Главная</a></li> -->
             {% for m in menu %}
                 <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
             {% endfor %}
@@ -26,8 +27,10 @@
     </header>
     {% endblock mainmenu %}
 
+    <main class="main">
+        {% block content %}
+        {% endblock content %}
+    </main>
 
-    {% block content %}
-    {% endblock content %}
 </body>
 </html>
