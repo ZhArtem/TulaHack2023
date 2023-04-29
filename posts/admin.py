@@ -20,10 +20,16 @@ class CommentAdmin(admin.ModelAdmin):
     pass
 
 
+class ThemeAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    prepopulated_fields = {'slug': ('name',)} 
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Theme, ThemeAdmin)
 
 
 
