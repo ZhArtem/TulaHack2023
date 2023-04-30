@@ -54,7 +54,7 @@ class PostCreate(LoginRequiredMixin, DataMixin, CreateView):
 
 
 def contact(request):
-    return HttpResponse("Обратная связь")
+    return render(request, 'posts/contact.html')
 
 
 class RegisterUser(DataMixin, CreateView):

@@ -4,11 +4,27 @@ from .models import *
 
 
 class PostAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        'id', 
+        'author', 
+        'title', 
+        # 'content', 
+        'time_create', 
+        'photo', 
+        'category', 
+        'theme', 
+        'rating', 
+        'is_moderated'
+        )
+    list_display_links = ('id', 'title')
+    search_fields = ('title', 'content')
+    list_editable = ('is_moderated',)
+    list_filter = ('is_moderated', 'time_create')
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('id', 'name')
+    list_display_links = ('id', 'name')
     prepopulated_fields = {'slug': ('name',)} 
 
 
@@ -21,7 +37,8 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class ThemeAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('id', 'name')
+    list_display_links = ('id', 'name')
     prepopulated_fields = {'slug': ('name',)} 
 
 

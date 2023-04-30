@@ -10,6 +10,9 @@
     <p class="article__text">
         {{post.content|linebreaks}}
     </p>
+    <p>Автор: {{ post.author }}</p>
+    <p>Тематика: {{ post.theme }}</p>
+
     <div class="article__bottom">
         <div class="article__comment">
             {% if request.user.is_authenticated %}
@@ -18,6 +21,7 @@
         </div>
         <div class="article__like">
             <img src="{% static 'posts/images/heart.svg' %}" alt="">
+            <p>{{ post.rating }}</p>
         </div>
     </div>
 </div>
