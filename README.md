@@ -17,6 +17,9 @@ ___Команда стала финалистом хакатона.___
   <img src="https://github.com/ZhArtem/TulaHack2023/assets/114347290/2d74a8a6-9b75-4252-974d-4df55cf96d79" width="400" align="center" />
 </p>
 
+[Демонстрационное видео](https://drive.google.com/file/d/1Y1Xsgwutn0h7FtyTw5iMAA3UQk9unFc8/view?usp=share_link)
+
+
 ### Использование
 
 Сначала клонируйте репозиторий с Github и перейдите в новый каталог:
